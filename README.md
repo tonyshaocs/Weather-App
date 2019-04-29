@@ -9,3 +9,5 @@ Users are able to search for a city in the format (City,Country) in the search b
 No external frameworks or packages were used in this application. JavaScript is used to filter through XML.
 This application implements Responsive Web Design for several widths and implemented Asynchronous JavaScript and XML.
 
+![alt text](https://github.com/tonyshaocs/Weather-App/blob/master/Example.png)
+
