@@ -17,5 +17,6 @@ No external frameworks or packages were used in this application. JavaScript is 
 This application implements Responsive Web Design for several screen widths and implemented Asynchronous JavaScript and XML principles.
   </li>
 </ul>
+
 ![alt text](https://github.com/tonyshaocs/Weather-App/blob/master/Example.png)
 
