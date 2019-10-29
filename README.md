@@ -10,10 +10,12 @@ This web application retrieves information from a free weather API that stores t
   <li>
 Users are able to search for a city in the format (City,Country) in the search bar and switch from celsius to fahranheit.
   </li>
+  <li>
 No external frameworks or packages were used in this application. JavaScript is used to filter through XML.
-
+  </li>
+  <li>
 This application implements Responsive Web Design for several widths and implemented Asynchronous JavaScript and XML.
-
+  </li>
 </ul>
 ![alt text](https://github.com/tonyshaocs/Weather-App/blob/master/Example.png)
 
