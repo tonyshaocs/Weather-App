@@ -1,56 +1,61 @@
+//Convert the temperatures from C -> F when the user first loads the page.
 function changeTempType(){
 	if (document.getElementById("myCheckBox").value==1){
 	document.getElementById("temp").innerHTML = document.getElementById("temp").innerHTML.substring(0,14)+(parseFloat(document.getElementById("temp").innerHTML.substring(14,19))*9/5+32).toFixed(2)+"° F";
-	document.getElementById("hourTemp1").innerHTML = (parseFloat(document.getElementById("hourTemp1").innerHTML.substring(0,5))*9/5+32).toFixed(2)+"° F" ;
-	document.getElementById("hourTemp2").innerHTML = (parseFloat(document.getElementById("hourTemp2").innerHTML.substring(0,5))*9/5+32).toFixed(2)+"° F" ;
-	document.getElementById("hourTemp3").innerHTML = (parseFloat(document.getElementById("hourTemp3").innerHTML.substring(0,5))*9/5+32).toFixed(2)+"° F" ; 
-	document.getElementById("temp1").innerHTML = (parseFloat(document.getElementById("temp1").innerHTML.substring(0,5))*9/5+32).toFixed(2)+"° F" ; 
-	document.getElementById("temp2").innerHTML = (parseFloat(document.getElementById("temp2").innerHTML.substring(0,5))*9/5+32).toFixed(2)+"° F" ; 
-	document.getElementById("temp3").innerHTML = (parseFloat(document.getElementById("temp3").innerHTML.substring(0,5))*9/5+32).toFixed(2)+"° F" ; 
-	document.getElementById("temp4").innerHTML = (parseFloat(document.getElementById("temp4").innerHTML.substring(0,5))*9/5+32).toFixed(2)+"° F" ; 
-	document.getElementById("temp5").innerHTML = (parseFloat(document.getElementById("temp5").innerHTML.substring(0,5))*9/5+32).toFixed(2)+"° F" ; 
-	document.getElementById("temp1X").innerHTML = document.getElementById("temp1").innerHTML;
-	document.getElementById("temp2X").innerHTML = document.getElementById("temp2").innerHTML;
-	document.getElementById("temp3X").innerHTML = document.getElementById("temp3").innerHTML;
-	document.getElementById("temp4X").innerHTML = document.getElementById("temp4").innerHTML;
-	document.getElementById("temp5X").innerHTML = document.getElementById("temp5").innerHTML;
+	
+	hourlyTemp = ["hourTemp1", "hourTemp2", "hourTemp3"];
+	for (i=0; i<3; i++){
+		document.getElementById(hourlyTemp[i]).innerHTML = (parseFloat(document.getElementById(hourlyTemp[i]).innerHTML.substring(0,5))*9/5+32).toFixed(2)+"° F" ;    
+	}
+	
+	weeklyTemp = ["temp1", "temp2", "temp3", "temp4", "temp5"];
+	mobileWT = ["temp1X", "temp2X", "temp3X", "temp4X", "temp5X"];
+  
+	for (i=0; i<5; i++){
+		document.getElementById(weeklyTemp[i]).innerHTML = (parseFloat(document.getElementById(weeklyTemp[i]).innerHTML.substring(0,5))*9/5+32).toFixed(2)+"° F" ; 
+		document.getElementById(mobileWT[i]).innerHTML = document.getElementById(weeklyTemp[i]).innerHTML;
+	} 
+
 	document.getElementById("myCheckBox").value=2;
 	}
 	else if (document.getElementById("myCheckBox").value==2){
 	document.getElementById("temp").innerHTML = document.getElementById("temp").innerHTML.substring(0,14)+((parseFloat(document.getElementById("temp").innerHTML.substring(14,19))-32)*(5/9)).toFixed(2)+"° C";
-	document.getElementById("hourTemp1").innerHTML = ((parseFloat(document.getElementById("hourTemp1").innerHTML.substring(0,5))-32)*(5/9)).toFixed(2)+"° C" ;
-	document.getElementById("hourTemp2").innerHTML = ((parseFloat(document.getElementById("hourTemp2").innerHTML.substring(0,5))-32)*(5/9)).toFixed(2)+"° C" ;
-	document.getElementById("hourTemp3").innerHTML = ((parseFloat(document.getElementById("hourTemp3").innerHTML.substring(0,5))-32)*(5/9)).toFixed(2)+"° C" ;
-	document.getElementById("temp1").innerHTML = ((parseFloat(document.getElementById("temp1").innerHTML.substring(0,5))-32)*(5/9)).toFixed(2)+"° C" ;
-	document.getElementById("temp2").innerHTML = ((parseFloat(document.getElementById("temp2").innerHTML.substring(0,5))-32)*(5/9)).toFixed(2)+"° C" ;
-	document.getElementById("temp3").innerHTML = ((parseFloat(document.getElementById("temp3").innerHTML.substring(0,5))-32)*(5/9)).toFixed(2)+"° C" ;
-	document.getElementById("temp4").innerHTML = ((parseFloat(document.getElementById("temp4").innerHTML.substring(0,5))-32)*(5/9)).toFixed(2)+"° C" ;
-	document.getElementById("temp5").innerHTML = ((parseFloat(document.getElementById("temp5").innerHTML.substring(0,5))-32)*(5/9)).toFixed(2)+"° C" ;
-	document.getElementById("temp1X").innerHTML = document.getElementById("temp1").innerHTML;
-	document.getElementById("temp2X").innerHTML = document.getElementById("temp2").innerHTML;
-	document.getElementById("temp3X").innerHTML = document.getElementById("temp3").innerHTML;
-	document.getElementById("temp4X").innerHTML = document.getElementById("temp4").innerHTML;
-	document.getElementById("temp5X").innerHTML = document.getElementById("temp5").innerHTML;
+	
+	hourlyTemp = ["hourTemp1", "hourTemp2", "hourTemp3"];
+	for (i=0; i<3; i++){
+		document.getElementById(hourlyTemp[i]).innerHTML = ((parseFloat(document.getElementById(hourlyTemp[i]).innerHTML.substring(0,5))-32)*(5/9)).toFixed(2)+"° C" ;  
+	}
+
+	weeklyTemp = ["temp1", "temp2", "temp3", "temp4", "temp5"];
+	mobileWT = ["temp1X", "temp2X", "temp3X", "temp4X", "temp5X"];
+  
+	for (i=0; i<5; i++){
+		document.getElementById(weeklyTemp[i]).innerHTML = ((parseFloat(document.getElementById(weeklyTemp[i]).innerHTML.substring(0,5))-32)*(5/9)).toFixed(2)+"° C" ;
+		document.getElementById(mobileWT[i]).innerHTML = document.getElementById(weeklyTemp[i]).innerHTML;
+	} 
+
 	document.getElementById("myCheckBox").value=1;
 	}
 }
 
+//Convert the temperatures from C -> F when the user updates the city.
 function changeTempTypeCityChange(){
-	document.getElementById("hourTemp1").innerHTML = (parseFloat(document.getElementById("hourTemp1").innerHTML.substring(0,5))*9/5+32).toFixed(2)+"° F" ;
-	document.getElementById("hourTemp2").innerHTML = (parseFloat(document.getElementById("hourTemp2").innerHTML.substring(0,5))*9/5+32).toFixed(2)+"° F" ;
-	document.getElementById("hourTemp3").innerHTML = (parseFloat(document.getElementById("hourTemp3").innerHTML.substring(0,5))*9/5+32).toFixed(2)+"° F" ; 
-	document.getElementById("temp1").innerHTML = (parseFloat(document.getElementById("temp1").innerHTML.substring(0,5))*9/5+32).toFixed(2)+"° F" ; 
-	document.getElementById("temp2").innerHTML = (parseFloat(document.getElementById("temp2").innerHTML.substring(0,5))*9/5+32).toFixed(2)+"° F" ; 
-	document.getElementById("temp3").innerHTML = (parseFloat(document.getElementById("temp3").innerHTML.substring(0,5))*9/5+32).toFixed(2)+"° F" ; 
-	document.getElementById("temp4").innerHTML = (parseFloat(document.getElementById("temp4").innerHTML.substring(0,5))*9/5+32).toFixed(2)+"° F" ; 
-	document.getElementById("temp5").innerHTML = (parseFloat(document.getElementById("temp5").innerHTML.substring(0,5))*9/5+32).toFixed(2)+"° F" ; 
-	document.getElementById("temp1X").innerHTML = document.getElementById("temp1").innerHTML;
-	document.getElementById("temp2X").innerHTML = document.getElementById("temp2").innerHTML;
-	document.getElementById("temp3X").innerHTML = document.getElementById("temp3").innerHTML;
-	document.getElementById("temp4X").innerHTML = document.getElementById("temp4").innerHTML;
-	document.getElementById("temp5X").innerHTML = document.getElementById("temp5").innerHTML;
+	hourlyTemp = ["hourTemp1", "hourTemp2", "hourTemp3"];
+	for (i=0; i<3; i++){
+		document.getElementById(hourlyTemp[i]).innerHTML = (parseFloat(document.getElementById(hourlyTemp[i]).innerHTML.substring(0,5))*9/5+32).toFixed(2)+"° F" ;    
+	}
+	
+	weeklyTemp = ["temp1", "temp2", "temp3", "temp4", "temp5"];
+	mobileWT = ["temp1X", "temp2X", "temp3X", "temp4X", "temp5X"];
+  
+	for (i=0; i<5; i++){
+		document.getElementById(weeklyTemp[i]).innerHTML = (parseFloat(document.getElementById(weeklyTemp[i]).innerHTML.substring(0,5))*9/5+32).toFixed(2)+"° F" ; 
+		document.getElementById(mobileWT[i]).innerHTML = document.getElementById(weeklyTemp[i]).innerHTML;
+	} 
 }
 
+
+//Make an HTTP request to the api to get the information when the user first loads the page.
 function loadDoc() {
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
@@ -72,6 +77,7 @@ function loadDoc() {
 
 }
 
+//Update the application when the user first loads the page.
 function myFunction(xml) {
   var xmlDoc = xml.responseXML;
   var x = xmlDoc.getElementsByTagName('temperature');
@@ -97,83 +103,79 @@ function myFunction(xml) {
   imgShift();
 }
 
+//Update the application when the user updates the city.
 function myFunction2(xml) {
   var xmlDoc = xml.responseXML;
+  
+  //Update Date
+  weeklyDate = ["day1", "day2", "day3", "day4", "day5"];
+  mobileWD = ["day1X", "day2X", "day3X", "day4X", "day5X"];
+  
+  for (i=0; i<5; i++){
+	document.getElementById(weeklyDate[i]).innerHTML = xmlDoc.getElementsByTagName('time')[i*8].getAttribute('from').substring(0,10);
+	document.getElementById(mobileWD[i]).innerHTML = document.getElementById(weeklyDate[i]).innerHTML;
+  } 
+  
+  //Update weekly weather conditions
+  weeklyWeather = ["day1w", "day2w", "day3w", "day4w", "day5w"];
+  mobileWWe = ["day1wX", "day2wX", "day3wX", "day4wX", "day5wX"];
+  
+  for (i=0; i<5; i++){
+	document.getElementById(weeklyWeather[i]).innerHTML = xmlDoc.getElementsByTagName('symbol')[i*8].getAttribute('name').toUpperCase();
+	document.getElementById(mobileWWe[i]).innerHTML = document.getElementById(weeklyWeather[i]).innerHTML;
+  } 
+  
+  //Update weekly temps
+  weeklyTemp = ["temp1", "temp2", "temp3", "temp4", "temp5"];
+  mobileWT = ["temp1X", "temp2X", "temp3X", "temp4X", "temp5X"];
+  
+  for (i=0; i<5; i++){
+	document.getElementById(weeklyTemp[i]).innerHTML = parseFloat(xmlDoc.getElementsByTagName('temperature')[i*8].getAttribute('value')).toFixed(2)+"° C"; 
+    document.getElementById(mobileWT[i]).innerHTML = document.getElementById(weeklyTemp[i]).innerHTML;
+  } 
+  
+  
+  //Update weekly wind speeds
+  weeklyWind = ["windspd1", "windspd2", "windspd3", "windspd4", "windspd5"];
+  mobileWW = ["windspd1X", "windspd2X", "windspd3X", "windspd4X", "windspd5X"];
+  
+  for (i=0; i<5; i++){
+	document.getElementById(weeklyWind[i]).innerHTML = xmlDoc.getElementsByTagName('windSpeed')[i*8].getAttribute('mps')+ " mps"; 
+	document.getElementById(mobileWW[i]).innerHTML = document.getElementById(weeklyWind[i]).innerHTML;
+  } 
+  
+  //Update weekly humidity
+  weeklyHum = ["humid1", "humid2", "humid3", "humid4", "humid5"];
+  mobileWH = ["humid1X", "humid2X", "humid3X", "humid4X", "humid5X"];
+  
+  for (i=0; i<5; i++){
+	document.getElementById(weeklyHum[i]).innerHTML = xmlDoc.getElementsByTagName('humidity')[i*8].getAttribute('value') + " %"; 
+	document.getElementById(mobileWH[i]).innerHTML = document.getElementById(weeklyHum[i]).innerHTML;
+  } 
  
-  document.getElementById("day1").innerHTML = xmlDoc.getElementsByTagName('time')[0].getAttribute('from').substring(0,10); 
-  document.getElementById("day1X").innerHTML = document.getElementById("day1").innerHTML;
-  document.getElementById("day2").innerHTML = xmlDoc.getElementsByTagName('time')[8].getAttribute('from').substring(0,10); 
-  document.getElementById("day2X").innerHTML = document.getElementById("day2").innerHTML;
-  document.getElementById("day3").innerHTML = xmlDoc.getElementsByTagName('time')[16].getAttribute('from').substring(0,10); 
-  document.getElementById("day3X").innerHTML = document.getElementById("day3").innerHTML;
-  document.getElementById("day4").innerHTML = xmlDoc.getElementsByTagName('time')[24].getAttribute('from').substring(0,10);
-  document.getElementById("day4X").innerHTML = document.getElementById("day4").innerHTML;
-  document.getElementById("day5").innerHTML = xmlDoc.getElementsByTagName('time')[32].getAttribute('from').substring(0,10);
-  document.getElementById("day5X").innerHTML = document.getElementById("day5").innerHTML;
-  
-  document.getElementById("day1w").innerHTML = xmlDoc.getElementsByTagName('symbol')[0].getAttribute('name').toUpperCase(); 
-  document.getElementById("day1wX").innerHTML = document.getElementById("day1w").innerHTML;
-  document.getElementById("day2w").innerHTML = xmlDoc.getElementsByTagName('symbol')[8].getAttribute('name').toUpperCase(); 
-  document.getElementById("day2wX").innerHTML = document.getElementById("day2w").innerHTML;
-  document.getElementById("day3w").innerHTML = xmlDoc.getElementsByTagName('symbol')[16].getAttribute('name').toUpperCase(); 
-  document.getElementById("day3wX").innerHTML = document.getElementById("day3w").innerHTML;
-  document.getElementById("day4w").innerHTML = xmlDoc.getElementsByTagName('symbol')[24].getAttribute('name').toUpperCase();
-  document.getElementById("day4wX").innerHTML = document.getElementById("day4w").innerHTML;
-  document.getElementById("day5w").innerHTML = xmlDoc.getElementsByTagName('symbol')[32].getAttribute('name').toUpperCase();
-  document.getElementById("day5wX").innerHTML = document.getElementById("day5w").innerHTML;
-  
-  document.getElementById("temp1").innerHTML = parseFloat(xmlDoc.getElementsByTagName('temperature')[0].getAttribute('value')).toFixed(2)+"° C"; 
-  document.getElementById("temp1X").innerHTML = document.getElementById("temp1").innerHTML;
-  document.getElementById("temp2").innerHTML = parseFloat(xmlDoc.getElementsByTagName('temperature')[8].getAttribute('value')).toFixed(2)+"° C"; 
-  document.getElementById("temp2X").innerHTML = document.getElementById("temp2").innerHTML;  
-  document.getElementById("temp3").innerHTML = parseFloat(xmlDoc.getElementsByTagName('temperature')[16].getAttribute('value')).toFixed(2)+"° C";  
-  document.getElementById("temp3X").innerHTML = document.getElementById("temp3").innerHTML;
-  document.getElementById("temp4").innerHTML = parseFloat(xmlDoc.getElementsByTagName('temperature')[24].getAttribute('value')).toFixed(2)+"° C"; 
-  document.getElementById("temp4X").innerHTML = document.getElementById("temp4").innerHTML;
-  document.getElementById("temp5").innerHTML = parseFloat(xmlDoc.getElementsByTagName('temperature')[32].getAttribute('value')).toFixed(2)+"° C"; 
-  document.getElementById("temp5X").innerHTML = document.getElementById("temp5").innerHTML;
-  
-  document.getElementById("windspd1").innerHTML = xmlDoc.getElementsByTagName('windSpeed')[0].getAttribute('mps')+ " mps"; 
-  document.getElementById("windspd1X").innerHTML = document.getElementById("windspd1").innerHTML;
-  document.getElementById("windspd2").innerHTML = xmlDoc.getElementsByTagName('windSpeed')[8].getAttribute('mps')+ " mps";
-  document.getElementById("windspd2X").innerHTML = document.getElementById("windspd2").innerHTML;
-  document.getElementById("windspd3").innerHTML = xmlDoc.getElementsByTagName('windSpeed')[16].getAttribute('mps')+ " mps";
-  document.getElementById("windspd3X").innerHTML = document.getElementById("windspd3").innerHTML;
-  document.getElementById("windspd4").innerHTML = xmlDoc.getElementsByTagName('windSpeed')[24].getAttribute('mps')+ " mps";
-  document.getElementById("windspd4X").innerHTML = document.getElementById("windspd4").innerHTML;
-  document.getElementById("windspd5").innerHTML = xmlDoc.getElementsByTagName('windSpeed')[32].getAttribute('mps')+ " mps";
-  document.getElementById("windspd5X").innerHTML = document.getElementById("windspd5").innerHTML;
-  
-  document.getElementById("humid1").innerHTML = xmlDoc.getElementsByTagName('humidity')[0].getAttribute('value') + " %"; 
-  document.getElementById("humid1X").innerHTML = document.getElementById("humid1").innerHTML;
-  document.getElementById("humid2").innerHTML = xmlDoc.getElementsByTagName('humidity')[7].getAttribute('value') + " %"; 
-  document.getElementById("humid2X").innerHTML = document.getElementById("humid2").innerHTML;
-  document.getElementById("humid3").innerHTML = xmlDoc.getElementsByTagName('humidity')[16].getAttribute('value') + " %"; 
-  document.getElementById("humid3X").innerHTML = document.getElementById("humid3").innerHTML;
-  document.getElementById("humid4").innerHTML = xmlDoc.getElementsByTagName('humidity')[24].getAttribute('value') + " %"; 
-  document.getElementById("humid4X").innerHTML = document.getElementById("humid4").innerHTML;
-  document.getElementById("humid5").innerHTML = xmlDoc.getElementsByTagName('humidity')[32].getAttribute('value') + " %"; 
-  document.getElementById("humid5X").innerHTML = document.getElementById("humid5").innerHTML;
-  
   document.getElementById("next0_3").innerHTML = "Over 3 Hours"; 
   document.getElementById("next3_6").innerHTML = "Over 6 Hours";
   document.getElementById("next6_9").innerHTML = "Over 9 Hours";
   
+  //Update hourly weather conditions
   hourlyWeather = ["hourW1", "hourW2", "hourW3"];
   for (i=0; i<3; i++){
 	document.getElementById(hourlyWeather[i]).innerHTML = xmlDoc.getElementsByTagName('symbol')[i].getAttribute('name').toUpperCase();  
   } 
   
+  //Update hourly humidity
   hourlyHum = ["hourHum1","hourHum2","hourHum3"];
   for (i=0; i<3; i++){
 	document.getElementById(hourlyHum[i]).innerHTML = "Humidity "+xmlDoc.getElementsByTagName('humidity')[i].getAttribute('value')+" %";   
   }
   
+  //Update hourly temps
   hourlyTemp = ["hourTemp1", "hourTemp2", "hourTemp3"];
   for (i=0; i<3; i++){
 	document.getElementById(hourlyTemp[i]).innerHTML = parseFloat(xmlDoc.getElementsByTagName('temperature')[i].getAttribute('value')).toFixed(i)+"° C";   
   }
   
+  //Update hourly wind speeds
   hourlyWind = ["hourWind1", "hourWind2", "hourWind3"];
   for (i=0; i<3; i++){
 	document.getElementById(hourlyWind[i]).innerHTML = "Wind "+xmlDoc.getElementsByTagName('windSpeed')[i].getAttribute('mps')+" mps";   
