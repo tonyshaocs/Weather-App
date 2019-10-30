@@ -159,21 +159,25 @@ function myFunction2(xml) {
   document.getElementById("next3_6").innerHTML = "Over 6 Hours";
   document.getElementById("next6_9").innerHTML = "Over 9 Hours";
   
-  document.getElementById("hourW1").innerHTML = xmlDoc.getElementsByTagName('symbol')[0].getAttribute('name').toUpperCase(); 
-  document.getElementById("hourW2").innerHTML = xmlDoc.getElementsByTagName('symbol')[1].getAttribute('name').toUpperCase(); 
-  document.getElementById("hourW3").innerHTML = xmlDoc.getElementsByTagName('symbol')[2].getAttribute('name').toUpperCase(); 
+  hourlyWeather = ["hourW1", "hourW2", "hourW3"];
+  for (i=0; i<3; i++){
+	document.getElementById(hourlyWeather[i]).innerHTML = xmlDoc.getElementsByTagName('symbol')[i].getAttribute('name').toUpperCase();  
+  } 
   
-  document.getElementById("hourHum1").innerHTML = "Humidity "+xmlDoc.getElementsByTagName('humidity')[0].getAttribute('value')+" %"; 
-  document.getElementById("hourHum2").innerHTML = "Humidity "+xmlDoc.getElementsByTagName('humidity')[1].getAttribute('value')+" %"; 
-  document.getElementById("hourHum3").innerHTML = "Humidity "+xmlDoc.getElementsByTagName('humidity')[2].getAttribute('value')+" %"; 
+  hourlyHum = ["hourHum1","hourHum2","hourHum3"];
+  for (i=0; i<3; i++){
+	document.getElementById(hourlyHum[i]).innerHTML = "Humidity "+xmlDoc.getElementsByTagName('humidity')[i].getAttribute('value')+" %";   
+  }
   
-  document.getElementById("hourTemp1").innerHTML = parseFloat(xmlDoc.getElementsByTagName('temperature')[0].getAttribute('value')).toFixed(2)+"° C"; 
-  document.getElementById("hourTemp2").innerHTML = parseFloat(xmlDoc.getElementsByTagName('temperature')[1].getAttribute('value')).toFixed(2)+"° C"; 
-  document.getElementById("hourTemp3").innerHTML = parseFloat(xmlDoc.getElementsByTagName('temperature')[2].getAttribute('value')).toFixed(2)+"° C"; 
+  hourlyTemp = ["hourTemp1", "hourTemp2", "hourTemp3"];
+  for (i=0; i<3; i++){
+	document.getElementById(hourlyTemp[i]).innerHTML = parseFloat(xmlDoc.getElementsByTagName('temperature')[i].getAttribute('value')).toFixed(i)+"° C";   
+  }
   
-  document.getElementById("hourWind1").innerHTML = "Wind "+xmlDoc.getElementsByTagName('windSpeed')[0].getAttribute('mps')+" mps"; 
-  document.getElementById("hourWind2").innerHTML = "Wind "+xmlDoc.getElementsByTagName('windSpeed')[1].getAttribute('mps')+" mps"; 
-  document.getElementById("hourWind3").innerHTML = "Wind "+xmlDoc.getElementsByTagName('windSpeed')[2].getAttribute('mps')+" mps"; 
+  hourlyWind = ["hourWind1", "hourWind2", "hourWind3"];
+  for (i=0; i<3; i++){
+	document.getElementById(hourlyWind[i]).innerHTML = "Wind "+xmlDoc.getElementsByTagName('windSpeed')[i].getAttribute('mps')+" mps";   
+  }
   
   if (document.getElementById("myCheckBox").value==2){
   changeTempTypeCityChange();

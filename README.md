@@ -5,7 +5,7 @@ I do not take ownership of the assets included.
 
 <ul>
   <li>
-This web application retrieves information from a free weather API that stores their information in XML format which I retrieved and displayed in a visually appeasing format.
+This web application retrieves information from a free weather API (openweathermap) that stores their information in XML format which I retrieved and displayed in a visually appeasing format.
   </li>
   <li>
 Users are able to search for a city in the format (City,Country) in the search bar and switch from celsius to fahranheit.

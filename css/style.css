@@ -1,0 +1,375 @@
+html{
+	background-color:white;
+	width:90%;
+}
+
+body{
+	background-color:#36393E;
+	border:solid;
+	border-radius: 10px;
+	border-width:3px;
+	font-family:helvetica;
+	font-weight:bold;
+	font-size:20px;
+	background:url("../images/lidl.png") no-repeat center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+header{
+	position:relative;
+	color:white;
+	font-size:52px;
+	margin:20px 24px ;
+	display:block;
+}
+
+th{
+	width:15%;
+	background-color:#553D67;	
+	box-shadow: 0 0 5px white;
+}
+
+td{
+	padding-top:15px;
+	padding-bottom:15px;
+	text-align:center;
+	box-shadow: 0 0 5px white;
+}
+
+
+.currentPanel{
+	width:40%;
+	background-color:#00C5CD;
+	border-radius:5px;
+	margin:0px 24px;
+	padding:10px 15px 20px;
+	color:white;
+	box-shadow: 0 0 10px white;
+	display:inline-block;
+}
+
+.degtype{
+	color:white;
+	font-size:30px;
+	position:relative;
+	display:inline;
+}
+
+.imgscaling{
+	width:20%;
+	margin-top:10px;
+	position:relative;
+	display:block;
+	background-color:white;
+	border-radius:15px;	
+	float:right;
+}
+
+.cWeather{
+	font-size:40px;
+	margin:0px 0px 0px 0px;
+}
+
+.header-row{
+	padding:25px 0px 25px;
+}
+
+.hourlyinfo{
+	position:relative;
+	width:45%;
+	margin:0px 20px 10px 0px;
+	color:white;
+	float:right;
+	display:inline-block;
+	font-size:18px;
+}
+
+.hourly{
+	border-radius:5px;
+	padding:5px 0px 5px 0px;
+	background-color:#41B3A3;
+	border:none;
+}
+
+.five-days{
+	color:white;
+	width:95%;	
+	border:none;
+	margin: 0px auto;
+	border-radius:5px;
+}
+
+.submitStuff{
+	display:inline;
+}
+
+.submit{
+	position:relative;
+	background-color:#00C5CD;
+	border-radius:5px;
+	border: none;
+	color: white;
+	padding:4px 20px 4px 20px;
+	text-decoration: none;
+	cursor: pointer;
+	margin:0px 5px;
+	float:right;
+	
+}
+
+
+.search{
+	position:relative;
+	float:right;
+	text-decoration:none;
+	border:solid;
+	border-color:white;
+	border-radius:5px;
+}
+
+
+
+.submit:hover{
+	background-color:#4CAF50;
+}
+
+.row1{
+	background-color:#C38D9E;
+}
+
+.row2{
+	background-color:#41B3A3;
+}
+
+.row3{
+	background-color:#C38D9E;
+}
+
+.row4{
+	background-color:#41B3A3;
+}
+
+.switch {
+	position: relative;
+	display: inline-block;
+	width: 60px;
+	height: 34px;
+}
+
+.slider {
+	position: absolute;
+	cursor: pointer;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #C38D9E;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+
+.switch input { 
+	opacity: 0;
+	width: 0;
+	height: 0;
+}
+
+
+.slider:before {
+	position: absolute;
+	content: "";
+	height: 26px;
+	width: 26px;
+	left: 4px;
+	bottom: 4px;
+	background-color: white;
+	-webkit-transition: .4s;
+	transition: .4s;
+}
+
+input:checked + .slider {
+	background-color: #41B3A3;
+}
+
+input:checked + .slider:before {
+	-webkit-transform: translateX(26px);
+	-ms-transform: translateX(26px);
+	transform: translateX(26px);
+}
+
+.slider.round {
+	border-radius: 24px;
+}
+
+.slider.round:before {
+	border-radius: 50%;
+}
+
+.semi{
+	display:none;
+}
+
+
+@media only screen and (max-width: 1024px) {
+	header{
+		margin:10px 2px	;
+	}
+	
+	.currentPanel{
+		font-size:18px;
+		padding:0px;
+		margin:10px;
+		border:none;
+	}
+	
+	.hourlyinfo{
+		width:55%;
+		font-size:16px;
+		padding:0px;
+		margin:0px 0px 10px 0px;
+	}
+	
+		
+	.five-days{
+		font-size:16px;
+		width:100%;
+	}
+}
+
+@media only screen and (max-width: 760px) {
+	.currentPanel{
+		width:95%;
+		margin:12px;
+	}
+	
+	.imgscaling{
+		display:inline-block;
+	}
+	
+	.hourly{
+		font-size:16px;
+	}
+	
+	.hourlyinfo{
+		position:relative;
+		width:100%;
+		float:none;
+	}
+	
+	.five-days{
+		font-size:14px;
+		width:95%;
+	}
+
+	
+}
+
+@media only screen and (max-width: 640px) {
+	
+	header{
+		font-size:40px;
+		margin:10px 2px	;
+	}
+	
+	td{
+		border-radius:5px;
+	}
+	
+	
+	.currentPanel{
+		width:99%;
+		margin:2px 0px 20px;
+		padding:0px;
+	}
+
+	.search{
+		width:140px;
+		padding:0px;
+		margin:1px;
+	}
+	
+	.submit{
+		width:86px;
+		margin:0px 1px;
+	}
+	
+	.full{
+		display:none;
+	}
+
+	.semi{
+		display:block;
+		margin-top:24px;
+		width:90%;
+	}
+	
+	.five-days{
+		font-size:16px;
+		width:90%;
+		padding:0px;
+		border-radius:10px;
+	}
+	
+	.header-row{
+		border-radius:10px;
+		padding:30px 0px;
+		font-size:20px;
+	}
+
+	.slider:before {
+		height: 16px;
+		width: 16px;
+	}
+	
+	
+	.switch {
+		width: 50px;
+		height: 24px;
+	}
+
+	.degtype{
+		font-size:22px;
+	}
+	
+}
+
+@media only screen and (max-width: 480px) {
+	
+	header{
+		font-size:40px;
+		margin:30px 2px	20px 0px;
+	}
+	
+	.hourly{
+		font-size:15px;
+	}
+
+	.search{
+		width:100px;
+	}
+
+
+}
+
+@media only screen and (max-width: 360px) {
+	.currentPanel{
+		font-size:18px;
+	}
+	
+	
+	.cWeather{
+		font-size:32px;
+	}
+	
+
+	.imgscaling{
+		width:50%;
+		float:left;
+		margin:0px 160px 0px 0px;
+	}	
+}
+

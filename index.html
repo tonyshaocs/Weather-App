@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+ <link type="text/css" href="./css/style.css" rel="stylesheet">
+ <meta charset="UTF-8">
+ <title>Weather App</title>
+ <script src = "./scripts/script.js"></script>
+</head>
+
+<div class="degtype">C
+<label class="switch">
+  <input type="checkBox" id="myCheckBox" onclick="changeTempType()" value=1>
+  <span class="slider round" ></span>
+</label>
+F</div>
+
+<button class="submit" onclick=lookUp(document.getElementById('cityName').value)>Search</button>
+<input id="cityName" class="search" type="text" placeholder="Search by city">
+
+<br/>
+
+<header id="city"></header>
+
+<body onload = "loadDoc()">
+
+<div class="currentPanel">
+<div class="cWeather" id="weather"></div>
+<img class="imgscaling" id="weatherImg" src="">
+<br/>
+<div>
+<div id="temp"></div>
+<div id="wind"></div>
+<div id="wDesc"></div>
+<div id="humidity"></div>
+</div>
+</div>
+
+<table class="hourlyinfo">
+<tr id="next0_3"></tr>
+<tr>
+<th class="hourly"><div id="hourW1"></div></th>
+<th class="hourly"><div id="hourHum1"></div></th>
+</tr>
+<tr>
+<th class="hourly"><div id="hourTemp1"></div></th>
+<th class="hourly"><div id="hourWind1"></div></th>
+</tr>
+<tr id="next3_6"></tr>
+<tr>
+<th class="hourly"><div id="hourW2"></div></th>
+<th class="hourly"><div id="hourHum2"></div></th>
+</tr>
+<tr>
+<th class="hourly"><div id="hourTemp2"></div></th>
+<th class="hourly"><div id="hourWind2"></div></th>
+</tr>
+<tr id="next6_9"></tr>
+<tr>
+<th class="hourly"><div id="hourW3"></div></th>
+<th class="hourly"><div id="hourHum3"></div></th>
+</tr>
+<tr>
+<th class="hourly"><div id="hourTemp3"></div></th>
+<th class="hourly"><div id="hourWind3"></div></th>
+</tr>
+</table>
+
+
+<table class="five-days full">
+<tr >
+<th class="header-row col1">
+</th>
+<th class="header-row col2">Day 1<div id="day1"></div></th>
+<th class="header-row col3">Day 2<div id="day2"></div></th>
+<th class="header-row col4">Day 3<div id="day3"></div></th>
+<th class="header-row col5">Day 4<div id="day4"></div></th>
+<th class="header-row col6">Day 5<div id="day5"></div></th>
+</tr>
+<tr class="row1">
+<td class="col1">Weather</td>
+<td class="col2"><div id="day1w"></div></td>
+<td class="col3"><div id="day2w"></div></td>
+<td class="col4"><div id="day3w"></div></td>
+<td class="col5"><div id="day4w"></div></td>
+<td class="col6"><div id="day5w"></div></td>
+</tr>
+<tr class="row2">
+<td class="col1">Temperature</td>
+<td class="col2"><div id="temp1"></div></td>
+<td class="col3"><div id="temp2"></div></td>
+<td class="col4"><div id="temp3"></div></td>
+<td class="col5"><div id="temp4"></div></td>
+<td class="col6"><div id="temp5"></div></td>
+</tr>
+<tr class="row3">
+<td class="col1">Wind</td>
+<td class="col2"><div id="windspd1"></div></td>
+<td class="col3"><div id="windspd2"></div></td>
+<td class="col4"><div id="windspd3"></div></td>
+<td class="col5"><div id="windspd4"></div></td>
+<td class="col6"><div id="windspd5"></div></td>
+</tr>
+<tr class="row4">
+<td class="col1">Humidity</td>
+<td class="col2"><div id="humid1"></div></td>
+<td class="col3"><div id="humid2"></div></td>
+<td class="col4"><div id="humid3"></div></td>
+<td class="col5"><div id="humid4"></div></td>
+<td class="col6"><div id="humid5"></div></td>
+</tr>
+</table>
+
+
+<table class="five-days semi">
+<tr>
+<th class="header-row col1">Day 1</th>
+<th class="header-row col2"><div id="day1X"></div></th>
+</tr>
+<tr class="row1">
+<td class="col1">Weather</td>
+<td class="col2"><div id="day1wX"></div></td>
+</tr>
+<tr class="row2">
+<td class="col1">Temperature</td>
+<td class="col2"><div id="temp1X"></div></td>
+</tr>
+<tr class="row3">
+<td class="col1">Wind Speed</td>
+<td class="col2"><div id="windspd1X"></div></td>
+</tr>
+<tr class="row4">
+<td class="col1">Humidity</td>
+<td class="col2"><div id="humid1X"></div></td>
+</tr>
+</table>
+
+<table class="five-days semi">
+<tr>
+<th class="header-row col1">Day 2</th>
+<th class="header-row col2"><div id="day2X"></div></th>
+</tr>
+<tr class="row1">
+<td class="col1">Weather</td>
+<td class="col2"><div id="day2wX"></div></td>
+</tr>
+<tr class="row2">
+<td class="col1">Temperature</td>
+<td class="col2"><div id="temp2X"></div></td>
+</tr>
+<tr class="row3">
+<td class="col1">Wind</td>
+<td class="col2"><div id="windspd2X"></div></td>
+</tr>
+<tr class="row4">
+<td class="col1">Humidity</td>
+<td class="col2"><div id="humid2X"></div></td>
+</tr>
+</table>
+
+<table class="five-days semi">
+<tr>
+<th class="header-row col1">Day 3</th>
+<th class="header-row col2"><div id="day3X"></div></th>
+</tr>
+<tr class="row1">
+<td class="col1">Weather</td>
+<td class="col2"><div id="day3wX"></div></td>
+</tr>
+<tr class="row2">
+<td class="col1">Temperature</td>
+<td class="col2"><div id="temp3X"></div></td>
+</tr>
+<tr class="row3">
+<td class="col1">Wind</td>
+<td class="col2"><div id="windspd3X"></div></td>
+</tr>
+<tr class="row4">
+<td class="col1">Humidity</td>
+<td class="col2"><div id="humid3X"></div></td>
+</tr>
+</table>
+
+<table class="five-days semi">
+<tr>
+<th class="header-row col1">Day 4</th>
+<th class="header-row col2"><div id="day4X"></div></th>
+</tr>
+<tr class="row1">
+<td class="col1">Weather</td>
+<td class="col2"><div id="day4wX"></div></td>
+</tr>
+<tr class="row2">
+<td class="col1">Temperature</td>
+<td class="col2"><div id="temp4X"></div></td>
+</tr>
+<tr class="row3">
+<td class="col1">Wind</td>
+<td class="col2"><div id="windspd4X"></div></td>
+</tr>
+<tr class="row4">
+<td class="col1">Humidity</td>
+<td class="col2"><div id="humid4X"></div></td>
+</tr>
+</table>
+
+<table class="five-days semi">
+<tr>
+<th class="header-row col1">Day 5</th>
+<th class="header-row col2"><div id="day5X"></div></th>
+</tr>
+<tr class="row1">
+<td class="col1">Weather</td>
+<td class="col2"><div id="day5wX"></div></td>
+</tr>
+<tr class="row2">
+<td class="col1">Temperature</td>
+<td class="col2"><div id="temp5X"></div></td>
+</tr>
+<tr class="row3">
+<td class="col1">Wind</td>
+<td class="col2"><div id="windspd5X"></div></td>
+</tr>
+<tr class="row4">
+<td class="col1">Humidity</td>
+<td class="col2"><div id="humid5X"></div></td>
+</tr>
+</table>
+
+
+</body>
+
+</html>
