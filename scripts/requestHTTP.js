@@ -6,7 +6,7 @@ function lookUp(search){
 		updateCurrentSum(this);
     }
   };
-  xhttp.open("GET", "http://api.openweathermap.org/data/2.5/weather?q="+search+"&units=metric&appid=c141214819da094493280f4cc2eb302d&mode=xml", true);
+  xhttp.open("GET", "https://api.openweathermap.org/data/2.5/weather?q="+search+"&units=metric&appid=c141214819da094493280f4cc2eb302d&mode=xml", true);
   xhttp.send();
   
   var xhttp2 = new XMLHttpRequest();
@@ -15,6 +15,6 @@ function lookUp(search){
 		updateHWinfo(this);
     }
   };
-  xhttp2.open("GET", "http://api.openweathermap.org/data/2.5/forecast?q="+search+"&units=metric&appid=c141214819da094493280f4cc2eb302d&mode=xml", true);
+  xhttp2.open("GET", "https://api.openweathermap.org/data/2.5/forecast?q="+search+"&units=metric&appid=c141214819da094493280f4cc2eb302d&mode=xml", true);
   xhttp2.send();
 }
