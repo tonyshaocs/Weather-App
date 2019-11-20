@@ -5,7 +5,10 @@
  <link type="text/css" href="./css/style.css" rel="stylesheet">
  <meta charset="UTF-8">
  <title>Weather App</title>
- <script src = "./scripts/script.js"></script>
+ <script src = "./scripts/requestHTTP.js"></script>
+ <script src = "./scripts/updateElements.js"></script>
+ <script src = "./scripts/changeTemp.js"></script>
+ <script src = "./scripts/changeIcons.js"></script>
 </head>
 
 <div class="degtype">C
@@ -22,7 +25,7 @@ F</div>
 
 <header id="city"></header>
 
-<body onload = "loadDoc()">
+<body onload = "lookUp('toronto')">
 
 <div class="currentPanel">
 <div class="cWeather" id="weather"></div>
