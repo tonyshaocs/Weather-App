@@ -1,22 +1,36 @@
 # Weather-App
-A Web Application to report on weather conditions across the world.
+<h3>A Web Application to report on weather conditions across the world.</h3>
 
-I do not take ownership of the assets included.
-
-<ul>
-  <li>
-This web application retrieves information from a free weather API (openweathermap) that stores their information in XML format which I retrieved and displayed in a visually appeasing format.
-  </li>
-  <li>
-Users are able to search for a city in the format (City,Country) in the search bar and switch from celsius to fahranheit.
-  </li>
-  <li>
-No external frameworks or packages were used in this application. JavaScript is used to filter through XML.
-  </li>
-  <li>
-This application implements Responsive Web Design for several screen widths and implemented Asynchronous JavaScript and XML principles.
-  </li>
-</ul>
+<h4>Preview:</h4>
 
 ![alt text](https://github.com/tonyshaocs/Weather-App/blob/master/Example.png)
+
+<h4>Details:</h4>
+<ul>
+  <li>HTML, CSS, JS</li>
+  <li>No backend needed</li>
+  <li>API: OpenWeatherMap</li>
+  <li>No external CSS libraries</li>
+</ul>
+
+<h4>Functions:</h4>
+<ul>
+<li>
+This web application retrieves information from a free weather API (openweathermap). Information was stored in XML, which I parsed. This application displays the parsed data in a pleasing interface. 
+</li>
+<li>
+Data includes: Current Weather, 5 Day Forecast, and Hourly (3-hour interval) Forecasts. 
+</li>
+<li>
+Users are able to search for a city in the format 'City, Country' in the search bar.
+</li>
+<li>
+Can convert from Celsius to Fahrenheit.
+</li>
+<li>
+This application implements Responsive Web Design for several screen widths and implemented Asynchronous JavaScript and XML principles.
+</li>
+</ul>
+
+
 
