@@ -25,7 +25,7 @@ Data includes: Current Weather, 5 Day Forecast, and Hourly (3-hour interval) For
 Users are able to search for a city in the format 'City, Country' in the search bar.
 </li>
 <li>
-Can convert from Celsius to Fahrenheit.
+Users can convert from Celsius to Fahrenheit.
 </li>
 <li>
 This application implements Responsive Web Design for several screen widths and implemented Asynchronous JavaScript and XML principles.
