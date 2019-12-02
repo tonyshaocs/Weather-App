@@ -1,29 +1,30 @@
 html{
 	background-color:white;
-	width:90%;
-}
-
-body{
-	background-color:#36393E;
-	border:solid;
-	border-radius: 10px;
-	border-width:3px;
-	font-family:helvetica;
-	font-weight:bold;
-	font-size:20px;
-	background:url("../images/lidl.png") no-repeat center;
-	-webkit-background-size: cover;
-	-moz-background-size: cover;
-	-o-background-size: cover;
-	background-size: cover;
+	width:100%;
+	
 }
 
 header{
 	position:relative;
 	color:white;
 	font-size:52px;
-	margin:20px 24px ;
+	margin:20px 24px;
+	width:50%;
 	display:block;
+}
+
+body{
+	background-color:#36393E;
+	font-family:helvetica;
+	font-weight:bold;
+	font-size:18px;
+	background:url("../images/lidl.png") no-repeat center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+	margin:0px;
+	padding:10px 5px 10px 5px;
 }
 
 th{
@@ -64,13 +65,12 @@ td{
 	position:relative;
 	display:block;
 	background-color:white;
-	border-radius:15px;	
+	border-radius:5px;	
 	float:right;
 }
 
 .cWeather{
-	font-size:40px;
-	margin:0px 0px 0px 0px;
+	font-size:50px;
 }
 
 .header-row{
@@ -80,7 +80,7 @@ td{
 .hourlyinfo{
 	position:relative;
 	width:45%;
-	margin:0px 20px 10px 0px;
+	margin:-60px 20px 20px 0px;
 	color:white;
 	float:right;
 	display:inline-block;
@@ -102,10 +102,6 @@ td{
 	border-radius:5px;
 }
 
-.submitStuff{
-	display:inline;
-}
-
 .submit{
 	position:relative;
 	background-color:#00C5CD;
@@ -120,6 +116,9 @@ td{
 	
 }
 
+.submit:hover{
+	background-color:#4CAF50;
+}
 
 .search{
 	position:relative;
@@ -130,25 +129,11 @@ td{
 	border-radius:5px;
 }
 
-
-
-.submit:hover{
-	background-color:#4CAF50;
-}
-
 .row1{
 	background-color:#C38D9E;
 }
 
 .row2{
-	background-color:#41B3A3;
-}
-
-.row3{
-	background-color:#C38D9E;
-}
-
-.row4{
 	background-color:#41B3A3;
 }
 
@@ -221,16 +206,23 @@ input:checked + .slider:before {
 	
 	.currentPanel{
 		font-size:18px;
-		padding:0px;
-		margin:10px;
+		width:37%;
+		padding:10px;
+		margin-left:0px;
 		border:none;
+		margin-bottom:20px;
+	}
+	
+	
+	.cWeather{
+		font-size:35px;
 	}
 	
 	.hourlyinfo{
-		width:55%;
+		width:50%;
 		font-size:16px;
 		padding:0px;
-		margin:0px 0px 10px 0px;
+		margin-right:0px;
 	}
 	
 		
@@ -242,8 +234,8 @@ input:checked + .slider:before {
 
 @media only screen and (max-width: 760px) {
 	.currentPanel{
-		width:95%;
-		margin:12px;
+		width:90%;
+		margin-right:0px;
 	}
 	
 	.imgscaling{
@@ -258,6 +250,7 @@ input:checked + .slider:before {
 		position:relative;
 		width:100%;
 		float:none;
+		margin-top:0px;
 	}
 	
 	.five-days{
@@ -275,15 +268,8 @@ input:checked + .slider:before {
 		margin:10px 2px	;
 	}
 	
-	td{
-		border-radius:5px;
-	}
-	
-	
 	.currentPanel{
-		width:99%;
-		margin:2px 0px 20px;
-		padding:0px;
+		width:90%;
 	}
 
 	.search{
@@ -325,25 +311,27 @@ input:checked + .slider:before {
 		width: 16px;
 	}
 	
-	
 	.switch {
-		width: 50px;
-		height: 24px;
+		width:50px;
+		height:24px;
 	}
 
 	.degtype{
 		font-size:22px;
 	}
-	
 }
 
 @media only screen and (max-width: 480px) {
-	
 	header{
-		font-size:40px;
+		font-size:36px;
 		margin:30px 2px	20px 0px;
+		width:100%;
 	}
 	
+	.cWeather{
+		font-size:28px;
+	}
+
 	.hourly{
 		font-size:15px;
 	}
@@ -351,25 +339,16 @@ input:checked + .slider:before {
 	.search{
 		width:100px;
 	}
-
-
 }
 
 @media only screen and (max-width: 360px) {
 	.currentPanel{
-		font-size:18px;
+		font-size:16px;
 	}
-	
-	
-	.cWeather{
-		font-size:32px;
-	}
-	
 
 	.imgscaling{
-		width:50%;
-		float:left;
-		margin:0px 160px 0px 0px;
+		width:100px;
+		margin-top:20px;
 	}	
 }
 
