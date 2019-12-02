@@ -4,9 +4,11 @@
 <h4>Preview:</h4>
 
 <h4>Normal Sized:</h4>
+
 ![alt text](https://github.com/tonyshaocs/Weather-App/blob/master/display-images/Example.png)
 
 <h4>Responsive Sized:</h4>
+
 ![alt text](https://github.com/tonyshaocs/Weather-App/blob/master/display-images/responsive_example.png)
 
 <h4>Details:</h4>
