@@ -1,7 +1,9 @@
 # Weather-App
 <h3>A Web Application to report on weather conditions across the world.</h3>
 
-<h4>Preview:</h4>
+<h3>Link: https://tonyshaocs.github.io/website/weather/index.html</h3>
+
+<h3>Previews:</h3>
 
 <h4>Normal Sized:</h4>
 
