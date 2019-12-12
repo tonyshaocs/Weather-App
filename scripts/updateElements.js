@@ -27,20 +27,20 @@ function updateCurrentSum(xml) {
 function updateHWinfo(xml) {
   var xmlDoc = xml.responseXML;
  
-  weeklyDate = ["day1", "day2", "day3", "day4", "day5"];
-  mobileWD = ["day1X", "day2X", "day3X", "day4X", "day5X"];
+  var weeklyDate = ["day1", "day2", "day3", "day4", "day5"];
+  var mobileWD = ["day1X", "day2X", "day3X", "day4X", "day5X"];
   
-  weeklyWeather = ["day1w", "day2w", "day3w", "day4w", "day5w"];
-  mobileWWe = ["day1wX", "day2wX", "day3wX", "day4wX", "day5wX"];
+  var weeklyWeather = ["day1w", "day2w", "day3w", "day4w", "day5w"];
+  var mobileWWe = ["day1wX", "day2wX", "day3wX", "day4wX", "day5wX"];
   
-  weeklyTemp = ["temp1", "temp2", "temp3", "temp4", "temp5"];
-  mobileWT = ["temp1X", "temp2X", "temp3X", "temp4X", "temp5X"];
+  var weeklyTemp = ["temp1", "temp2", "temp3", "temp4", "temp5"];
+  var mobileWT = ["temp1X", "temp2X", "temp3X", "temp4X", "temp5X"];
   
-  weeklyWind = ["windspd1", "windspd2", "windspd3", "windspd4", "windspd5"];
-  mobileWW = ["windspd1X", "windspd2X", "windspd3X", "windspd4X", "windspd5X"];
+  var weeklyWind = ["windspd1", "windspd2", "windspd3", "windspd4", "windspd5"];
+  var mobileWW = ["windspd1X", "windspd2X", "windspd3X", "windspd4X", "windspd5X"];
   
-  weeklyHum = ["humid1", "humid2", "humid3", "humid4", "humid5"];
-  mobileWH = ["humid1X", "humid2X", "humid3X", "humid4X", "humid5X"];
+  var weeklyHum = ["humid1", "humid2", "humid3", "humid4", "humid5"];
+  var mobileWH = ["humid1X", "humid2X", "humid3X", "humid4X", "humid5X"];
   
   for (i=0; i<5; i++){
 	//Update Date
@@ -65,10 +65,10 @@ function updateHWinfo(xml) {
   document.getElementById("next6_9").innerHTML = "Over 9 Hours";
   
   
-  hourlyWeather = ["hourW1", "hourW2", "hourW3"];  
-  hourlyHum = ["hourHum1","hourHum2","hourHum3"];
-  hourlyTemp = ["hourTemp1", "hourTemp2", "hourTemp3"];
-  hourlyWind = ["hourWind1", "hourWind2", "hourWind3"];
+  var hourlyWeather = ["hourW1", "hourW2", "hourW3"];  
+  var hourlyHum = ["hourHum1","hourHum2","hourHum3"];
+  var hourlyTemp = ["hourTemp1", "hourTemp2", "hourTemp3"];
+  var hourlyWind = ["hourWind1", "hourWind2", "hourWind3"];
   for (i=0; i<3; i++){
 	//Update hourly weather conditions
 	document.getElementById(hourlyWeather[i]).innerHTML = xmlDoc.getElementsByTagName('symbol')[i].getAttribute('name').toUpperCase();  
