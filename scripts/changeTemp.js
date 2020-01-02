@@ -2,15 +2,13 @@ hourlyTemp = ["hourTemp1", "hourTemp2", "hourTemp3"];
 weeklyTemp = ["temp1", "temp2", "temp3", "temp4", "temp5"];
 mobileWT = ["temp1X", "temp2X", "temp3X", "temp4X", "temp5X"];
 
-//Convert the temperatures from C -> F or F -> C when the user first loads the page.
+//Convert the temperatures from C -> F or F -> C
 function changeTempType(){
-	if (document.getElementById("myCheckBox").value==1){ 		
+	if (document.getElementById("typeCheckBox").checked == true){ //If the slider is checked, then the user wants Fahrenheit.
 		changeCtoF(); 
-		document.getElementById("myCheckBox").value=2;
 	}
-	else if (document.getElementById("myCheckBox").value==2){
+	else if (document.getElementById("typeCheckBox").checked == false){ //If the slider is unchecked, then the user wants Celsius.
 		changeFtoC();
-		document.getElementById("myCheckBox").value=1;
 	}
 }
 

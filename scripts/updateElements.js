@@ -12,10 +12,6 @@ function updateCurrentSum(xml) {
   //If the toggle is set to celsius
   document.getElementById("temp").innerHTML = "Current Temp: " + parseFloat(temp).toFixed(2)+"° C";  
   
-  //If the toggle is set to fahrenheit
-  if (document.getElementById("myCheckBox").value==2){
-	document.getElementById("temp").innerHTML = document.getElementById("temp").innerHTML.substring(0,14)+(parseFloat(document.getElementById("temp").innerHTML.substring(14,19))*9/5+32).toFixed(2)+"° F";
-  }
   //Update the other categories
   document.getElementById("city").innerHTML = city+", "+country;
   document.getElementById("wind").innerHTML = "Wind Speed: " + wind +" mps";
@@ -79,13 +75,13 @@ function updateHWinfo(xml) {
 	//Update hourly humidity 
 	document.getElementById(hourlyHum[i]).innerHTML = "Humidity "+xmlDoc.getElementsByTagName('humidity')[i].getAttribute('value')+" %"; 
 	//Update hourly temps 
-	document.getElementById(hourlyTemp[i]).innerHTML = parseFloat(xmlDoc.getElementsByTagName('temperature')[i].getAttribute('value')).toFixed(i)+"° C"; 
+	document.getElementById(hourlyTemp[i]).innerHTML = parseFloat(xmlDoc.getElementsByTagName('temperature')[i].getAttribute('value')).toFixed(2)+"° C"; 
 	//Update hourly wind speeds
 	document.getElementById(hourlyWind[i]).innerHTML = "Wind "+xmlDoc.getElementsByTagName('windSpeed')[i].getAttribute('mps')+" mps";   	
   }
   
   
-  if (document.getElementById("myCheckBox").value==2){
+  if (document.getElementById("typeCheckBox").checked == true){
 	changeCtoF();
   }
 }

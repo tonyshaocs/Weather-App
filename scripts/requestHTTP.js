@@ -1,3 +1,10 @@
+//On load, reset the temperature type and update the weather info.
+function startUP(){
+	document.getElementById("typeCheckBox").checked = false;
+	lookUp('toronto');
+}
+
+
 //Make the HTTP request to the API to retrieve new information
 //Requires the city to retrieve information for.
 //On success callback, the XML formatted info will be passed to updateCurrentSum() in updateElements.js to update the view.

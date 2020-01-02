@@ -137,6 +137,12 @@ td{
 	background-color:#41B3A3;
 }
 
+
+.semi{
+	display:none;
+}
+
+
 .switch {
 	position: relative;
 	display: inline-block;
@@ -144,6 +150,8 @@ td{
 	height: 34px;
 }
 
+
+/*For the F->C & C->F slider*/
 .slider {
 	position: absolute;
 	cursor: pointer;
@@ -178,6 +186,9 @@ td{
 
 input:checked + .slider {
 	background-color: #41B3A3;
+	-webkit-transform: translateX(0px);
+	-ms-transform: translateX(0px);
+	transform: translateX(0px);
 }
 
 input:checked + .slider:before {
@@ -192,10 +203,6 @@ input:checked + .slider:before {
 
 .slider.round:before {
 	border-radius: 50%;
-}
-
-.semi{
-	display:none;
 }
 
 
