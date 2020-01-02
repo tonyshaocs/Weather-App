@@ -1,25 +1,29 @@
 //Update the application's current weather summary.
 function updateCurrentSum(xml) {
   var xmlDoc = xml.responseXML;
-  var x = xmlDoc.getElementsByTagName('temperature');
+  var temp = xmlDoc.getElementsByTagName('temperature')[0].getAttribute('value');
   var city = xmlDoc.getElementsByTagName('city')[0].getAttribute('name');
   var wind = xmlDoc.getElementsByTagName('speed')[0].getAttribute('value');
   var wdesc = xmlDoc.getElementsByTagName('speed')[0].getAttribute('name');
   var country =  xmlDoc.getElementsByTagName("city")[0].getElementsByTagName("country")[0].childNodes[0].nodeValue;
   var humidity = xmlDoc.getElementsByTagName('humidity')[0].getAttribute('value');
   var weather = xmlDoc.getElementsByTagName('weather')[0].getAttribute('value');
-  var y = x[0].getAttribute('value');
   
-  document.getElementById("temp").innerHTML = "Current Temp: " + parseFloat(y).toFixed(2)+"° C";
+  //If the toggle is set to celsius
+  document.getElementById("temp").innerHTML = "Current Temp: " + parseFloat(temp).toFixed(2)+"° C";  
+  
+  //If the toggle is set to fahrenheit
   if (document.getElementById("myCheckBox").value==2){
 	document.getElementById("temp").innerHTML = document.getElementById("temp").innerHTML.substring(0,14)+(parseFloat(document.getElementById("temp").innerHTML.substring(14,19))*9/5+32).toFixed(2)+"° F";
   }
+  //Update the other categories
   document.getElementById("city").innerHTML = city+", "+country;
   document.getElementById("wind").innerHTML = "Wind Speed: " + wind +" mps";
   document.getElementById("wDesc").innerHTML = "( "+wdesc+" )";
   document.getElementById("humidity").innerHTML = "Humidity: "+ humidity + " %";
   document.getElementById("weather").innerHTML = weather.toUpperCase(); 
   
+  //Update the icon for the weather
   imgShift();
 }
 
@@ -85,4 +89,25 @@ function updateHWinfo(xml) {
 	changeCtoF();
   }
 }
+
+/*icons from https://www.iconfinder.com/iconsets/iconsland-weather*/
+//Update the displaying icon depending on the current type of weather in the area
+function imgShift(){
+	if (document.getElementById("weather").innerHTML=="MIST"){
+		document.getElementById("weatherImg").src="images/mist.png";
+	}
+	else if ((document.getElementById("weather").innerHTML).includes("CLOUDS")){
+		document.getElementById("weatherImg").src="images/clouds.png";
+	}
+	else if ((document.getElementById("weather").innerHTML).includes("RAIN")){
+		document.getElementById("weatherImg").src="images/rain.png";
+	}
+	else if ((document.getElementById("weather").innerHTML).includes("SNOW")){
+		document.getElementById("weatherImg").src="images/snow.png";
+	}
+	else if ((document.getElementById("weather").innerHTML).includes("CLEAR")){
+		document.getElementById("weatherImg").src="images/clear.png";
+	}
+}
+
 

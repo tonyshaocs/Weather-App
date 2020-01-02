@@ -1,8 +1,10 @@
-//HTTP request to API to change the city and update the information
+//Make the HTTP request to the API to retrieve new information
+//Requires the city to retrieve information for.
+//On success callback, the XML formatted info will be passed to updateCurrentSum() in updateElements.js to update the view.
 function lookUp(search){
   var xhttp = new XMLHttpRequest();
   xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
+    if (this.readyState == 4 && this.status == 200) { //Success Callback is defined as a readyState of 4, meaning operation is done alongside a 200 OK response.
 		updateCurrentSum(this);
     }
   };
